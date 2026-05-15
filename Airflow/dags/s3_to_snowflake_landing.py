@@ -101,6 +101,8 @@ with DAG(
 
         wait_for_file >> load_to_snowflake
 
+
+
         #Trigger the separate dbt DAG after inventory loads
         if dataset_name == "inventory":
             trigger_snapshot = TriggerDagRunOperator(
